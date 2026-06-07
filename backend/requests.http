@@ -1,0 +1,4 @@
+
+### Test CMS vesti sa velikim limitom
+GET http://localhost:8081/api/cms/news?page=1&limit=100000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiYWRtaW5AcmFmLnJzIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgwODY1NDAxfQ.HVY9ocMDvN_Brbkzu3SoZL5D41hVY4AElkgAlprGJ1E
