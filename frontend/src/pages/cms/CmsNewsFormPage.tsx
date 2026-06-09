@@ -220,47 +220,61 @@ const styles: Record<string, React.CSSProperties> = {
         marginBottom: "24px"
     },
     title: {
-        margin: 0,
-        fontSize: "28px"
+        margin: "0 0 18px 0",
+        fontSize: "28px",
+        fontWeight: 900,
+        color: "#0f172a"
     },
     subtitle: {
         margin: "6px 0 0",
         color: "#6b7280"
     },
     card: {
-        maxWidth: "900px",
+        maxWidth: "920px",
         background: "white",
-        borderRadius: "12px",
+        borderRadius: "16px",
         padding: "24px",
-        boxShadow: "0 8px 20px rgba(0,0,0,0.06)",
-        display: "flex",
-        flexDirection: "column",
-        gap: "18px"
+        border: "1px solid #e5e7eb",
+        boxShadow: "0 12px 28px rgba(15, 23, 42, 0.08)"
+    },
+    fieldGroup: {
+        marginBottom: "18px"
     },
     label: {
-        display: "flex",
-        flexDirection: "column",
-        gap: "8px",
-        fontWeight: 700,
-        color: "#374151"
+        display: "block",
+        marginBottom: "8px",
+        fontWeight: 800,
+        color: "#111827"
     },
     input: {
-        padding: "10px 12px",
-        borderRadius: "8px",
+        width: "100%",
+        padding: "11px 13px",
+        borderRadius: "10px",
         border: "1px solid #d1d5db",
-        background: "#ffffff",
-        color: "#111827",
-        fontSize: "15px"
+        fontSize: "15px",
+        outline: "none",
+        boxSizing: "border-box"
+    },
+    select: {
+        width: "100%",
+        padding: "11px 13px",
+        borderRadius: "10px",
+        border: "1px solid #d1d5db",
+        fontSize: "15px",
+        outline: "none",
+        boxSizing: "border-box",
+        background: "white"
     },
     textarea: {
-        padding: "10px 12px",
-        borderRadius: "8px",
+        width: "100%",
+        minHeight: "260px",
+        padding: "11px 13px",
+        borderRadius: "10px",
         border: "1px solid #d1d5db",
-        background: "#ffffff",
-        color: "#111827",
         fontSize: "15px",
+        outline: "none",
         resize: "vertical",
-        lineHeight: 1.5
+        boxSizing: "border-box"
     },
     helpText: {
         margin: "-8px 0 0",
@@ -270,25 +284,25 @@ const styles: Record<string, React.CSSProperties> = {
     actions: {
         display: "flex",
         justifyContent: "flex-end",
-        gap: "12px",
-        marginTop: "8px"
+        gap: "10px",
+        marginTop: "20px"
     },
     primaryButton: {
-        padding: "10px 14px",
-        borderRadius: "8px",
-        border: "1px solid #111827",
-        background: "#111827",
-        color: "#ffffff",
+        padding: "10px 16px",
+        borderRadius: "999px",
+        border: "1px solid #0f172a",
+        background: "#0f172a",
+        color: "white",
         cursor: "pointer",
-        fontWeight: 700
+        fontWeight: 900
     },
     secondaryButton: {
-        padding: "10px 14px",
-        borderRadius: "8px",
-        border: "1px solid #9ca3af",
-        background: "#ffffff",
+        padding: "10px 16px",
+        borderRadius: "999px",
+        border: "1px solid #d1d5db",
+        background: "white",
         color: "#111827",
         cursor: "pointer",
-        fontWeight: 600
-    }
+        fontWeight: 800
+    },
 };

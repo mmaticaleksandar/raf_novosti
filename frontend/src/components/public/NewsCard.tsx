@@ -24,7 +24,7 @@ export function NewsCard({ news }: NewsCardProps) {
             <p style={styles.text}>{preview}</p>
 
             <Link to={`/news/${news.id}`} style={styles.readMore}>
-                Pročitaj više
+                Pročitaj više →
             </Link>
         </article>
     );
@@ -32,27 +32,27 @@ export function NewsCard({ news }: NewsCardProps) {
 
 const styles: Record<string, React.CSSProperties> = {
     card: {
-        background: "#ffffff",
-        borderRadius: "12px",
-        padding: "20px",
-        boxShadow: "0 8px 20px rgba(0,0,0,0.06)",
-        display: "flex",
-        flexDirection: "column",
-        gap: "10px"
+        background: "white",
+        borderRadius: "14px",
+        padding: "22px",
+        marginBottom: "16px",
+        border: "1px solid #eef2f7",
+        boxShadow: "0 8px 24px rgba(15, 23, 42, 0.06)"
     },
     titleLink: {
         color: "#111827",
         textDecoration: "none"
     },
     title: {
-        margin: 0,
-        fontSize: "22px"
+        fontSize: "21px",
+        fontWeight: 900,
+        margin: "0 0 8px 0",
+        color: "#0f172a"
     },
     meta: {
-        display: "flex",
-        gap: "8px",
-        color: "#6b7280",
-        fontSize: "14px"
+        color: "#64748b",
+        fontSize: "14px",
+        marginBottom: "10px"
     },
     text: {
         margin: 0,
@@ -60,9 +60,16 @@ const styles: Record<string, React.CSSProperties> = {
         lineHeight: 1.6
     },
     readMore: {
-        color: "#111827",
-        fontWeight: 700,
+        display: "inline-flex",
+        alignItems: "center",
+        marginTop: "10px",
+        padding: "8px 13px",
+        borderRadius: "999px",
+        background: "#0f172a",
+        color: "white",
         textDecoration: "none",
-        marginTop: "6px"
-    }
+        fontWeight: 800,
+        fontSize: "14px",
+        boxShadow: "0 8px 18px rgba(15, 23, 42, 0.16)"
+    },
 };

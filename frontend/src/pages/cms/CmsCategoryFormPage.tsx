@@ -181,52 +181,61 @@ const styles: Record<string, React.CSSProperties> = {
     card: {
         maxWidth: "720px",
         background: "white",
-        borderRadius: "12px",
+        borderRadius: "16px",
         padding: "24px",
-        boxShadow: "0 8px 20px rgba(0,0,0,0.06)",
-        display: "flex",
-        flexDirection: "column",
-        gap: "18px"
+        border: "1px solid #e5e7eb",
+        boxShadow: "0 12px 28px rgba(15, 23, 42, 0.08)"
     },
     label: {
         display: "flex",
         flexDirection: "column",
-        gap: "8px",
-        fontWeight: 700
+        gap: "7px",
+        marginBottom: "16px",
+        fontWeight: 800,
+        color: "#111827"
     },
     input: {
-        padding: "10px 12px",
-        borderRadius: "8px",
+        width: "100%",
+        padding: "11px 13px",
+        borderRadius: "10px",
         border: "1px solid #d1d5db",
-        background: "#ffffff",
-        color: "#111827",
         fontSize: "15px",
+        outline: "none",
+        boxSizing: "border-box"
     },
     textarea: {
-        padding: "10px 12px",
-        borderRadius: "8px",
+        width: "100%",
+        minHeight: "120px",
+        padding: "11px 13px",
+        borderRadius: "10px",
         border: "1px solid #d1d5db",
-        background: "#ffffff",
-        color: "#111827",
         fontSize: "15px",
-        resize: "vertical"
+        outline: "none",
+        resize: "vertical",
+        boxSizing: "border-box"
     },
     primaryButton: {
-        padding: "10px 14px",
-        borderRadius: "8px",
-        border: "1px solid #111827",
-        background: "#111827",
-        color: "#ffffff",
+        padding: "10px 16px",
+        borderRadius: "999px",
+        border: "1px solid #0f172a",
+        background: "#0f172a",
+        color: "white",
         cursor: "pointer",
-        fontWeight: 700
+        fontWeight: 900
     },
     secondaryButton: {
-        padding: "10px 14px",
-        borderRadius: "8px",
-        border: "1px solid #9ca3af",
-        background: "#ffffff",
+        padding: "10px 16px",
+        borderRadius: "999px",
+        border: "1px solid #d1d5db",
+        background: "white",
         color: "#111827",
         cursor: "pointer",
-        fontWeight: 600
-    }
+        fontWeight: 800
+    },
+    actions: {
+        display: "flex",
+        justifyContent: "flex-end",
+        gap: "10px",
+        marginTop: "20px"
+    },
 };

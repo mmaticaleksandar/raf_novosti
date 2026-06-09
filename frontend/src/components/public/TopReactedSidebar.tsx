@@ -21,7 +21,7 @@ export function TopReactedSidebar() {
 
     return (
         <aside style={styles.sidebar}>
-            <h2 style={styles.title}>Najviše reakcija</h2>
+            <h2 style={styles.sidebarTitle}>Najviše reakcija</h2>
 
             {items.length === 0 ? (
                 <p style={styles.empty}>Nema podataka.</p>
@@ -42,11 +42,13 @@ export function TopReactedSidebar() {
 
 const styles: Record<string, React.CSSProperties> = {
     sidebar: {
-        background: "#ffffff",
-        borderRadius: "12px",
+        background: "white",
+        borderRadius: "14px",
         padding: "18px",
-        boxShadow: "0 8px 20px rgba(0,0,0,0.06)",
-        alignSelf: "start"
+        border: "1px solid #eef2f7",
+        boxShadow: "0 12px 28px rgba(15, 23, 42, 0.08)",
+        position: "sticky",
+        top: "96px"
     },
     title: {
         margin: "0 0 14px",
@@ -60,15 +62,24 @@ const styles: Record<string, React.CSSProperties> = {
         gap: "10px"
     },
     item: {
-        color: "#374151"
-    },
-    link: {
-        color: "#111827",
-        textDecoration: "none",
+        marginBottom: "9px",
+        color: "#64748b",
         fontWeight: 700
     },
+    link: {
+        color: "#0f172a",
+        textDecoration: "none",
+        fontWeight: 900
+    },
     empty: {
-        color: "#6b7280",
-        margin: 0
-    }
+        margin: 0,
+        color: "#64748b",
+        fontSize: "14px"
+    },
+    sidebarTitle: {
+        margin: "0 0 12px 0",
+        fontSize: "17px",
+        fontWeight: 900,
+        color: "#0f172a"
+    },
 };

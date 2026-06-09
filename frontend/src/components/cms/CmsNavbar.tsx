@@ -29,7 +29,7 @@ export function CmsNavbar() {
     return (
         <header style={styles.header}>
             <div>
-                <strong style={styles.logo}>RAF Novosti CMS</strong>
+                <strong style={styles.logo}>RAF Novosti · CMS Panel</strong>
             </div>
 
             <nav style={styles.nav}>
@@ -48,7 +48,7 @@ export function CmsNavbar() {
                 )}
 
                 <NavLink to="/" style={getLinkStyle}>
-                    Javni deo
+                    Otvori sajt
                 </NavLink>
             </nav>
 
@@ -66,10 +66,16 @@ export function CmsNavbar() {
             </form>
 
             <div style={styles.userBox}>
-                <span>
-                    {user?.firstName} {user?.lastName}
-                </span>
-
+                {user && (
+                    <div style={styles.userBadge}>
+                        <span style={styles.userName}>
+                            {user.firstName} {user.lastName}
+                        </span>
+                        <span style={styles.userRole}>
+                            {user.role === "ADMIN" ? "Admin" : "Creator"}
+                        </span>
+                    </div>
+                )}
                 <button style={styles.logoutButton} onClick={handleLogout}>
                     Logout
                 </button>
@@ -92,13 +98,16 @@ function getLinkStyle({ isActive }: { isActive: boolean }): React.CSSProperties 
 const styles: Record<string, React.CSSProperties> = {
     header: {
         minHeight: "64px",
-        background: "#111827",
+        background: "linear-gradient(135deg, #0f172a 0%, #111827 65%, #1f2937 100%)",
         color: "white",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         padding: "0 24px",
-        gap: "24px"
+        gap: "24px",
+        boxShadow: "0 8px 24px rgba(15, 23, 42, 0.18)",
+        position: "relative",
+        zIndex: 10
     },
     logo: {
         fontSize: "18px",
@@ -138,11 +147,35 @@ const styles: Record<string, React.CSSProperties> = {
         gap: "12px",
         whiteSpace: "nowrap"
     },
+    userBadge: {
+        display: "flex",
+        alignItems: "center",
+        gap: "8px",
+        padding: "7px 10px",
+        borderRadius: "999px",
+        background: "rgba(255, 255, 255, 0.10)",
+        border: "1px solid rgba(255, 255, 255, 0.18)"
+    },
+    userName: {
+        color: "white",
+        fontWeight: 700,
+        fontSize: "14px"
+    },
+    userRole: {
+        color: "#111827",
+        background: "#fbbf24",
+        padding: "3px 7px",
+        borderRadius: "999px",
+        fontWeight: 800,
+        fontSize: "12px"
+    },
     logoutButton: {
         padding: "8px 12px",
-        borderRadius: "6px",
-        border: "none",
+        borderRadius: "999px",
+        border: "1px solid rgba(255, 255, 255, 0.35)",
+        background: "rgba(255, 255, 255, 0.08)",
+        color: "white",
         cursor: "pointer",
-        color: "black"
+        fontWeight: 700
     }
 };

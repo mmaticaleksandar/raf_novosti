@@ -4,4 +4,5 @@ export interface Category {
     description: string;
     created_at?: string;
     updated_at?: string;
+    news_count:number;
 }

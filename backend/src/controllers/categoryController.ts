@@ -21,10 +21,18 @@ export async function getCategories(
 
         const [rows] = await db.query(
             `
-      SELECT id, name, description, created_at, updated_at
-      FROM categories
-      ORDER BY name ASC
-      LIMIT ? OFFSET ?
+                SELECT
+                    c.id,
+                    c.name,
+                    c.description,
+                    c.created_at,
+                    c.updated_at,
+                    COUNT(n.id) AS news_count
+                FROM categories c
+                         LEFT JOIN news n ON n.category_id = c.id
+                GROUP BY c.id, c.name, c.description, c.created_at, c.updated_at
+                ORDER BY c.created_at DESC
+                    LIMIT ? OFFSET ?
       `,
             [limit, offset]
         );

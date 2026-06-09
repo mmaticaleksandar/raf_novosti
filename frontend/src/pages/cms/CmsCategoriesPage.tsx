@@ -88,7 +88,7 @@ export function CmsCategoriesPage() {
             ) : (
                 <div style={styles.card}>
                     <table style={styles.table}>
-                        <thead>
+                        <thead style={styles.tableHead}>
                         <tr>
                             <th style={styles.th}>Naziv</th>
                             <th style={styles.th}>Opis</th>
@@ -133,7 +133,17 @@ export function CmsCategoriesPage() {
                                             </button>
 
                                             <button
-                                                style={styles.dangerButton}
+                                                style={
+                                                    category.news_count > 0
+                                                        ? styles.disabledDangerButton
+                                                        : styles.dangerButton
+                                                }
+                                                disabled={category.news_count > 0}
+                                                title={
+                                                    category.news_count > 0
+                                                        ? "Kategorija ne može da se obriše jer sadrži vesti."
+                                                        : "Obriši kategoriju"
+                                                }
                                                 onClick={() => handleDelete(category)}
                                             >
                                                 Obriši
@@ -175,63 +185,81 @@ const styles: Record<string, React.CSSProperties> = {
     },
     card: {
         background: "white",
-        borderRadius: "12px",
-        padding: "20px",
-        boxShadow: "0 8px 20px rgba(0,0,0,0.06)"
+        borderRadius: "16px",
+        padding: "18px",
+        border: "1px solid #e5e7eb",
+        boxShadow: "0 12px 28px rgba(15, 23, 42, 0.08)",
+        overflowX: "auto"
     },
     table: {
         width: "100%",
         borderCollapse: "collapse"
     },
+    tableHead: {
+        background: "#f8fafc"
+    },
     th: {
         textAlign: "left",
-        borderBottom: "1px solid #e5e7eb",
-        padding: "12px",
-        color: "#374151"
+        padding: "14px 12px",
+        color: "#0f172a",
+        fontSize: "14px",
+        fontWeight: 900,
+        borderBottom: "1px solid #e5e7eb"
     },
     td: {
-        borderBottom: "1px solid #f3f4f6",
-        padding: "12px",
-        verticalAlign: "top"
+        padding: "14px 12px",
+        borderBottom: "1px solid #eef2f7",
+        color: "#111827",
+        verticalAlign: "middle"
     },
     actions: {
         display: "flex",
-        gap: "8px"
+        gap: "8px",
+        alignItems: "center"
     },
     primaryButton: {
-        padding: "10px 14px",
-        borderRadius: "8px",
-        border: "1px solid #111827",
-        background: "#111827",
-        color: "#ffffff",
+        padding: "8px 12px",
+        borderRadius: "999px",
+        border: "1px solid #cbd5e1",
+        background: "white",
+        color: "#0f172a",
         cursor: "pointer",
-        fontWeight: 700
+        fontWeight: 800
     },
     secondaryButton: {
         padding: "8px 12px",
-        borderRadius: "6px",
-        border: "1px solid #9ca3af",
-        background: "#ffffff",
-        color: "#111827",
+        borderRadius: "999px",
+        border: "1px solid #cbd5e1",
+        background: "white",
+        color: "#0f172a",
         cursor: "pointer",
-        fontWeight: 600
+        fontWeight: 800
     },
     dangerButton: {
         padding: "8px 12px",
-        borderRadius: "6px",
-        border: "1px solid #fca5a5",
-        background: "#fee2e2",
-        color: "#991b1b",
+        borderRadius: "999px",
+        border: "1px solid #fecaca",
+        background: "#fff1f2",
+        color: "#be123c",
         cursor: "pointer",
-        fontWeight: 600
+        fontWeight: 800
     },
     categoryLink: {
         background: "none",
         border: "none",
         padding: 0,
-        color: "#2563eb",
+        color: "#0f172a",
         cursor: "pointer",
-        fontWeight: 700,
-        textDecoration: "underline"
+        fontWeight: 900,
+        textDecoration: "none"
+    },
+    disabledDangerButton: {
+        padding: "8px 12px",
+        borderRadius: "999px",
+        border: "1px solid #e5e7eb",
+        background: "#f8fafc",
+        color: "#94a3b8",
+        cursor: "not-allowed",
+        fontWeight: 800
     }
 };
